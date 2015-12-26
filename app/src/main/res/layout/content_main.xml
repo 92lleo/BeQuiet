@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <Switch
+        android:id="@+id/sw_muteAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:checked="false"
+        android:onClick="muteAll"
+        android:tag="sw_muteAll"
+        android:text="@string/muteAll"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <Switch
+        android:id="@+id/sw_ringtone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sw_muteAll"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_ringtone"
+        android:text="@string/sw_ringtone"
+        android:layout_toStartOf="@+id/textView2"
+        android:layout_toLeftOf="@+id/textView2" />
+
+    <Switch
+        android:id="@+id/sw_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sw_notification"
+        android:layout_alignLeft="@+id/sw_notification"
+        android:layout_alignRight="@+id/sw_notification"
+        android:layout_alignStart="@+id/sw_notification"
+        android:layout_below="@+id/sw_notification"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_media"
+        android:text="Media" />
+
+    <Switch
+        android:id="@+id/sw_alarms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sw_media"
+        android:layout_alignLeft="@+id/sw_media"
+        android:layout_alignRight="@+id/sw_media"
+        android:layout_alignStart="@+id/sw_media"
+        android:layout_below="@+id/sw_media"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_alarms"
+        android:text="Alarms" />
+
+    <Switch
+        android:id="@+id/sw_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sw_ringtone"
+        android:layout_alignStart="@+id/sw_ringtone"
+        android:layout_below="@+id/sw_ringtone"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_notification"
+        android:text="Notification"
+        android:layout_alignRight="@+id/sw_ringtone"
+        android:layout_alignEnd="@+id/sw_ringtone" />
+
+    <Switch
+        android:id="@+id/sw_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sw_voicecall"
+        android:layout_alignLeft="@+id/sw_notification"
+        android:layout_alignRight="@+id/sw_voicecall"
+        android:layout_alignStart="@+id/sw_notification"
+        android:layout_below="@+id/sw_alarms"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_system"
+        android:text="System" />
+
+    <Switch
+        android:id="@+id/sw_voicecall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sw_alarms"
+        android:layout_alignLeft="@+id/sw_alarms"
+        android:layout_alignRight="@+id/sw_alarms"
+        android:layout_alignStart="@+id/sw_alarms"
+        android:layout_below="@+id/sw_system"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_voicecall"
+        android:text="Voicecall" />
+
+    <Switch
+        android:id="@+id/sw_dtmf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sw_voicecall"
+        android:layout_alignLeft="@+id/sw_voicecall"
+        android:layout_alignRight="@+id/sw_voicecall"
+        android:layout_alignStart="@+id/sw_voicecall"
+        android:layout_below="@+id/sw_voicecall"
+        android:checked="false"
+        android:onClick="switchFlipped"
+        android:tag="sw_dtmf"
+        android:text="DTMF" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibration"
+        android:id="@+id/sw_vibration"
+        android:layout_below="@+id/sw_dtmf"
+        android:layout_alignLeft="@+id/sw_dtmf"
+        android:layout_alignStart="@+id/sw_dtmf"
+        android:checked="false"
+        android:tag="sw_vibration"
+        android:onClick="toggleVibration"
+        android:layout_alignRight="@+id/sw_dtmf"
+        android:layout_alignEnd="@+id/sw_dtmf" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="(c) 2015 - Leonhard Künzler"
+        android:id="@+id/textView"
+        android:layout_marginBottom="53dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="www.kuenzler.io"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="visitHomepage"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:id="@+id/b_refresh"
+        android:tag="b_refresh"
+        android:onClick="setVolumeData"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="86dp"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Listener"
+        android:layout_below="@+id/sw_vibration"
+        android:id="@+id/cb_useListener"
+        android:checked="false"
+        android:tag="cb_useListener"
+        android:onClick="setUseListener"
+        android:layout_above="@+id/b_refresh"
+        android:layout_alignLeft="@+id/sw_vibration"
+        android:layout_alignStart="@+id/sw_vibration" />
+
+</RelativeLayout>
